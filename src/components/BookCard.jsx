@@ -19,7 +19,7 @@ export default function BookCard({
             </span>
 
             <button type="button" onClick={() => onReserved(id)}>
-                {available ? "Disponível" : "Reservado"}
+                {available ? "Disponível" : "Devolver"}
             </button>
 
         </article>
