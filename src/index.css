@@ -52,6 +52,9 @@
 
 body {
   margin: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #root {
@@ -71,6 +74,7 @@ h2 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
+  color: #16171d;
 }
 
 h1 {
@@ -93,6 +97,7 @@ h2 {
 }
 p {
   margin: 0;
+  text-align: left;
 }
 
 code,

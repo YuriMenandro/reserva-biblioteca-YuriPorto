@@ -14,7 +14,7 @@ export const books = [
     title: "Vidas Secas",
     author: "Graciliano Ramos",
     year: 1938,
-    available: false,
+    available: true,
   },
   {
     id: "b3",
@@ -35,7 +35,7 @@ export const books = [
     title: "Macunaíma",
     author: "Mário de Andrade",
     year: 1928,
-    available: false,
+    available: true,
   },
   {
     id: "b6",
