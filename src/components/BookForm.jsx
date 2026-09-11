@@ -48,6 +48,7 @@ export default function BookForm({ onAddBook }) {
                         onChange={handleChange}
                         placeholder="Ex.: Crime e Castigo"
                     />
+                    <p>Quantidade de caracteres digitados: {form.title.length} </p>
                 </div>
         
                 <div className="field">
