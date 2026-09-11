@@ -1,6 +1,6 @@
 import BookCard from "./BookCard";
 
-export default function BookList({ books}) {
+export default function BookList({ books, onReserved}) {
     if (books.length === 0) {
         return <p>Nenhum livro no acervo.</p>;
     }
@@ -11,6 +11,7 @@ export default function BookList({ books}) {
                 <BookCard
                     key={book.id}
                     {...book}
+                    onReserved={onReserved}
                 />
             ))}
         </section>
