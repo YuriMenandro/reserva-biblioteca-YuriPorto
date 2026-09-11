@@ -2,6 +2,7 @@ export default function BookCard({
     id,
     title,
     author, 
+    year,
     available,
     onReserved,
 })  {
@@ -10,6 +11,7 @@ export default function BookCard({
             <div>
                 <h2>{title}</h2>
                 <p>{author}</p>
+                <p>{year}</p>
             </div>
 
 
@@ -19,7 +21,7 @@ export default function BookCard({
             </span>
 
             <button type="button" onClick={() => onReserved(id)}>
-                {available ? "Disponível" : "Devolver"}
+                {available ? "Reservar" : "Devolver"}
             </button>
 
         </article>
