@@ -17,7 +17,7 @@ export default function App() {
         <p>Consulte a disponibilidade e reserve o que precisar.</p>
       </header>
 
-      <Panel>
+      <Panel title="Livros do acervo" >
         <BookList books={books} onReserved={handleReserve} />
       </Panel>
     </main>
