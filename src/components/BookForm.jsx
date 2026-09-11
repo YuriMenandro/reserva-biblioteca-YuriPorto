@@ -27,6 +27,7 @@ export default function BookForm({ onAddBook }) {
         
         onAddBook({
             id: crypto.randomUUID(),
+            
             title,
             author,
             year,

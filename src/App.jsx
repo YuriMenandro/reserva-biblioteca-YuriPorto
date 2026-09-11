@@ -9,10 +9,15 @@ import BookForm from "./components/BookForm"
 
 export default function App() {
   const [books, setBooks] = useState(initialBooks);
+  const [showOnlyAvailable, setShowOnlyAvailable] = useState(false);
 
   const availableCount = books.filter(
     (book) => book.available,
   ).length;
+
+  const visibleBooks = showOnlyAvailable ? books.filter(
+    (book) => book.available
+  ) : books;
 
   function handleReserve(bookId) {
     setBooks((currentBooks) =>
@@ -44,8 +49,17 @@ export default function App() {
         <BookForm onAddBook={handleAddBook} />
       </Panel>
 
+      <label>
+        <input
+          type="checkbox"
+          checked={showOnlyAvailable}
+          onChange={() => setShowOnlyAvailable((current) => !current)}
+        />
+        Mostrar só disponíveis
+      </label>
+
       <Panel title="Livros do acervo" >
-        <BookList books={books} onReserved={handleReserve} />
+        <BookList books={visibleBooks} onReserved={handleReserve} />
       </Panel>
     </main>
   );
