@@ -153,3 +153,31 @@ button:hover {
   color: var(--vermelho);
   font-weight: 700;
 }
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 4%;
+  border-bottom: 1px solid #d7dde5;
+  background: #ffffff;
+}
+
+.app-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.app-header a {
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #334155;
+  text-decoration: none;
+}
+
+.app-header a.active {
+  background: #1f2937;
+  color: #ffffff;
+}

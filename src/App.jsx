@@ -1,29 +1,32 @@
+import { NavLink, Route, Routes } from "react-router";
 import "./App.css";
-import BookList from "./components/BookList"
-import Panel from "./components/Panel";
-import BookForm from "./components/BookForm"
-import { useContext } from "react";
-import { BooksContext } from "./context/BooksContext";
+import AcervoPage from "./pages/AcervoPage";
+import NovoLivroPage from "./pages/NovoLivroPage";
+import SobrePage from "./pages/SobrePage";
+import NotFoundPage from "./pages/NotFoundPage";
+
 
 export default function App() {
-  const { books, availableCount } = useContext(BooksContext);
-
   return (
-    <main className="app">
-      <header className="hero">
-        <p className="eyebrow">BIBLIOTECA ITEAM</p>
-        <h1>Reserva de livros do acervo.</h1>
-        <p>Consulte a disponibilidade e reserve o que precisar.</p>
-        <p>{availableCount} de {books.length} livros disponíveis.</p>
-      </header>
+    <div className="app-shell">
+        <header className="app-header">
+          <strong>Reserva da Biblioteca - ITEAM</strong>
 
-      <Panel title="Novo Livro">
-        <BookForm />
-      </Panel>
+          <nav aria-label="Navegação principal">
+            <NavLink to="/" end>Acervo</NavLink>
+            <NavLink to="/novo">Novo livro</NavLink>
+            <NavLink to="/sobre">Sobre</NavLink>
+          </nav>
+        </header>
 
-      <Panel title="Livros do acervo" >
-        <BookList />
-      </Panel>
-    </main>
+        <main className="app">
+          <Routes>
+            <Route path="/" element={<AcervoPage />} />
+            <Route path="/novo" element={<NovoLivroPage />} />
+            <Route path="/sobre" element={<SobrePage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+      </div>
   );
 }
